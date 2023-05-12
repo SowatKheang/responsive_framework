@@ -11,7 +11,7 @@ export 'core/enums/enum.dart';
 export 'core/helpers/device_helper.dart';
 export 'core/helpers/font_size_helper.dart';
 export 'core/helpers/layout_size_helper.dart';
-export 'core/helpers/ui_helper.dart';
+export 'core/helpers/responsive_ui_helper.dart';
 
 /// [Widgets]
 export 'core/widgets/responsive_ui_widget.dart';

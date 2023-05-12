@@ -40,20 +40,21 @@ class _MyAppState extends State<MyApp> {
           ),
           home: Scaffold(
             appBar: AppBar(
-              title: Text('Responsive Framework Demo', style: TextStyle(fontSize: FontSizeHelper.H3),),
+              title: Text('Responsive Framework Demo', style: TextStyle(fontSize: FontSizeHelper.H3)),
             ),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  UIHelper.buildTitleTextWidget(title: '${DeviceHelper.getInstance().orientation}'),
+                  ResponsiveUIHelper.buildTitleTextWidget(title: '${DeviceHelper.getInstance().orientation}'),
                   const SizedBox(height: 10),
-                  UIHelper.buildNormalTextWidget(text: screenTypeText),
+                  ResponsiveUIHelper.buildNormalTextWidget(text: screenTypeText),
                 ],
               ),
             ),
           ),
         );
-    });
+      }
+    );
   }
 }

@@ -12,7 +12,7 @@ class DeviceHelper {
   static const String PLATFORM_IOS_TEXT = 'iOS';
   static const String PLATFORM_ANDROID_TEXT = 'Android';
 
-  late DeviceInfoModel _deviceInfoModel;
+  DeviceInfoModel _deviceInfoModel = new DeviceInfoModel();
 
   static DeviceHelper? _instance;
   
@@ -47,7 +47,6 @@ class DeviceHelper {
     double? maxTabletWidth,
   ]) {
     
-    _deviceInfoModel = new DeviceInfoModel();
     // Set Orientation
     _deviceInfoModel.orientation = currentOrientation;
 

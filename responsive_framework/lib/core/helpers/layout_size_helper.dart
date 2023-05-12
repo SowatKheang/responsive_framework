@@ -1,5 +1,7 @@
 
 import 'dart:math';
+import 'package:flutter/material.dart';
+
 import '../../responsive_framework.dart';
 
 ///
@@ -37,9 +39,15 @@ extension DeviceExtention on num {
   double get pt => this * inches / (_deviceInfoModel.isTablet ? 72 : 70);
 
   /// The respective value in pixels (default)
-  // double get px => _deviceInfoModel.isTablet ? (this + 4) : this.toDouble();
   //? Need to refactor
-  double get px => this *  (_deviceInfoModel.isTablet ? (_deviceInfoModel.ASPECT_RATIO * 1.1) : (_deviceInfoModel.ASPECT_RATIO * 2));
+  // double get px => this * (_deviceInfoModel.isTablet ? (_deviceInfoModel.ASPECT_RATIO * 1.1) : (_deviceInfoModel.ASPECT_RATIO * 2));
+  double get px  {
+    // debugPrint('ASPECT_RATIO: ${_deviceInfoModel.ASPECT_RATIO}');
+    if (_deviceInfoModel.isTablet) {
+      return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * 1.2) : (_deviceInfoModel.ASPECT_RATIO * 2.2));
+    }
+    return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * .5) : (_deviceInfoModel.ASPECT_RATIO * 2));
+  }
 
   //* Relative length units
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
