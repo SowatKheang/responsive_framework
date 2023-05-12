@@ -6,21 +6,20 @@
     "configurations": [
         {
             "name": "example",
-            "cwd": "flutter_responsive_framework/example",
+            "cwd": "example",
             "request": "launch",
-            "type": "dart",
-            "flutterMode": "debug"
+            "type": "dart"
         },
         {
             "name": "example (profile mode)",
-            "cwd": "flutter_responsive_framework/example",
+            "cwd": "example",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "example (release mode)",
-            "cwd": "flutter_responsive_framework/example",
+            "cwd": "example",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

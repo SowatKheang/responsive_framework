@@ -1,4 +1,5 @@
 # Provide Widget for responsive Layout, Widget, and Text
+# The main purpose is about Responsive Text for both Tablet and Mobile
 
 <!-- ![Tablet Landscape Mode](/flutter_responsive_framework/screenshots/tablet_landscape.png "Tablet Landscape Mode")
 ![Tablet Portrait Mode](/flutter_responsive_framework/screenshots/tablet_portrait.png "Tablet Portrait Mode"). -->
