@@ -24,18 +24,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ResponsiveUIWidget(
       builder: (context, orientation, screenType) {
-        String screenTypeText = '';
-        switch (DeviceHelper.getInstance().screenType) {
-          case EScreenType.MOBILE:
-            screenTypeText = "This is Mobile Screen";
-            break;
-          case EScreenType.TABLET:
-            screenTypeText = "This is Tablet Screen";
-            break;
-          default: screenTypeText = 'Other Screen'; break;
-          
-        }
-
         return MaterialApp(
           title: _appTitle,
           theme: ThemeData(
@@ -51,13 +39,13 @@ class _MyAppState extends State<MyApp> {
                 children: <Widget>[
                   
                   // Default Title Text Widget provide by responsive framework package
-                  ResponsiveUIHelper.buildTitleTextWidget(title: '${DeviceHelper.getInstance().orientation}'),
+                  ResponsiveUIHelper.buildTitleTextWidget(title: DeviceHelper.getInstance().screenOrientationString),
                   
                   // Call px by num.px
                   SizedBox(height: 10.px),
                   
                   // Default Text Widget provide by responsive framework package
-                  ResponsiveUIHelper.buildNormalTextWidget(text: screenTypeText),
+                  ResponsiveUIHelper.buildNormalTextWidget(text: DeviceHelper.getInstance().screenTypeString),
                   
                   // Call px by LayoutSizeHelper.px(num)
                   SizedBox(height: LayoutSizeHelper.px(10)),

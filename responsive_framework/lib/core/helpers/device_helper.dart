@@ -31,6 +31,27 @@ class DeviceHelper {
   EScreenType get screenType => _deviceInfoModel.screenType;
   Orientation get orientation => _deviceInfoModel.orientation;
 
+  String get screenTypeString {
+    String type = '';
+    switch (screenType) {
+      case EScreenType.MOBILE:
+        type = 'This is Mobile Screen';
+        break;
+      case EScreenType.TABLET:
+        type = 'This is Tablet Screen';
+        break;
+      default: type = 'This is Other Screen'; break;
+    }
+    return type;
+  }
+
+  String get screenOrientationString {
+    if (isLandscape) {
+      return 'Landscape Mode';
+    }
+    return 'Portrait Mode';
+  }
+
   /// This allows a value of type T or T?
   /// to be treated as a value of type T?.
   ///
