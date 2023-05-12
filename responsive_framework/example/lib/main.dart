@@ -17,6 +17,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  final String _appTitle = 'Responsive Framework Demo';
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveUIWidget(
@@ -34,21 +37,37 @@ class _MyAppState extends State<MyApp> {
         }
 
         return MaterialApp(
-          title: 'Responsive Framework Demo',
+          title: _appTitle,
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
           home: Scaffold(
             appBar: AppBar(
-              title: Text('Responsive Framework Demo', style: TextStyle(fontSize: FontSizeHelper.H3)),
+              title: Text(_appTitle, style: TextStyle(fontSize: FontSizeHelper.H3)),
             ),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  
+                  // Default Title Text Widget provide by responsive framework package
                   ResponsiveUIHelper.buildTitleTextWidget(title: '${DeviceHelper.getInstance().orientation}'),
-                  const SizedBox(height: 10),
+                  
+                  // Call px by num.px
+                  SizedBox(height: 10.px),
+                  
+                  // Default Text Widget provide by responsive framework package
                   ResponsiveUIHelper.buildNormalTextWidget(text: screenTypeText),
+                  
+                  // Call px by LayoutSizeHelper.px(num)
+                  SizedBox(height: LayoutSizeHelper.px(10)),
+
+                  // Platform Widget provide by responsive framework package
+                  ResponsiveUIHelper.buildPlatformWidget(
+                    tabletWidget: Text('My Tablet Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                    mobileWidget: Text('My Mobile Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                  ),
+
                 ],
               ),
             ),
