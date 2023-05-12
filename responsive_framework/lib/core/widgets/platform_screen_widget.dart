@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
+import 'package:flutter_responsive_framework/flutter_responsive_framework.dart';
 
 ///
 /// Example on how to implement [PlatformScreenWidget]

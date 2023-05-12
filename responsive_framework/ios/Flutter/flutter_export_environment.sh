@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/macbook/Documents/SOFTWARES/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/macbook/Documents/MINE/FLUTTER_PACKAGE/responsive_framework"
+export "FLUTTER_APPLICATION_PATH=/Users/macbook/Documents/MINE/FLUTTER_PACKAGE/flutter_responsive_framework"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"

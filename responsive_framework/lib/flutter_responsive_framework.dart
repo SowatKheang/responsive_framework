@@ -1,5 +1,5 @@
 
-library responsive_framework;
+library flutter_responsive_framework;
 
 /// [Models]
 export 'core/models/device_info_model.dart';

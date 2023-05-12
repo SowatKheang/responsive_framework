@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../../responsive_framework.dart';
+import '../../flutter_responsive_framework.dart';
 
 /// 
 /// Provides [BuildContext], [Orientation], and [EScreenType] parameters to the builder function

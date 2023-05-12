@@ -1,6 +1,6 @@
 
 import 'dart:math';
-import '../../responsive_framework.dart';
+import '../../flutter_responsive_framework.dart';
 
 ///
 /// [LayoutSizeHelper]

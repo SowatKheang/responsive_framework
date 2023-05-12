@@ -1,5 +1,5 @@
 
-import '../../responsive_framework.dart';
+import '../../flutter_responsive_framework.dart';
 
 ///
 /// [FontSizeHelper] helper class for font size configuration based on [Mobile] and [Tablet]

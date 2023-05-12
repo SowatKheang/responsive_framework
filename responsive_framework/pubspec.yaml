@@ -1,7 +1,9 @@
-name: responsive_framework
+name: flutter_responsive_framework
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
+
+## Reference: https://pub.dev/packages/responsive_sizer
 
 environment:
   sdk: '>=2.17.0 <3.0.0'

@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import '../../responsive_framework.dart';
+import '../../flutter_responsive_framework.dart';
 
 ///
 /// [DeviceInfoModel]

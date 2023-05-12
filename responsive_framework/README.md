@@ -1,7 +1,7 @@
 # Provide Widget for responsive Layout, Widget, and Text
 
-<!-- ![Tablet Landscape Mode](/responsive_framework/screenshots/tablet_landscape.png "Tablet Landscape Mode")
-![Tablet Portrait Mode](/responsive_framework/screenshots/tablet_portrait.png "Tablet Portrait Mode"). -->
+<!-- ![Tablet Landscape Mode](/flutter_responsive_framework/screenshots/tablet_landscape.png "Tablet Landscape Mode")
+![Tablet Portrait Mode](/flutter_responsive_framework/screenshots/tablet_portrait.png "Tablet Portrait Mode"). -->
 
 ## Tablet
 <img src="screenshots/tablet_portrait.png" height="500"> 
@@ -16,17 +16,17 @@
 <br>
 
 # Installation
-### Add responsive_framework to pubspec.yaml
+### Add flutter_responsive_framework to pubspec.yaml
 
 ```yaml
 dependencies:
-  responsive_framework: ^0.0.1
+  flutter_responsive_framework: ^0.0.1
 ```
 # Usage
 
 ## Import the Package
 ```dart
-import 'package:responsive_framework/responsive_framework.dart';
+import 'package:flutter_responsive_framework/flutter_responsive_framework.dart';
 ```
 ## Wrap MaterialApp with ResponsiveUIWidget widget
 ```dart
@@ -78,3 +78,9 @@ ResponsiveUIHelper.buildPlatformWidgetWithOrientation(
     mobilLandScapeWidget: YourMobileLandScapeWidget(),
 );
 ```
+
+# Community Support
+
+If you have any suggestions or issues, feel free to open an [issue](https://github.com/SowatKheang/responsive_framework/issues)
+
+If you would like to contribute, feel free to create a [PR](https://github.com/SowatKheang/responsive_framework/pulls)
