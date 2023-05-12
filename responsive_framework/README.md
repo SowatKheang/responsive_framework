@@ -1,39 +1,80 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Provide Widget for responsive Layout, Widget, and Text
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<!-- ![Tablet Landscape Mode](/responsive_framework/screenshots/tablet_landscape.png "Tablet Landscape Mode")
+![Tablet Portrait Mode](/responsive_framework/screenshots/tablet_portrait.png "Tablet Portrait Mode"). -->
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Tablet
+<img src="screenshots/tablet_portrait.png" height="500"> 
+<img src="screenshots/tablet_landscape.png" height="500"> 
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<br>
 
-## Features
+## Mobile
+<img src="screenshots/mobile_portrait.png" height="400"> 
+<img src="screenshots/mobile_landscape.png" height="250"> 
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+<br>
 
-## Getting started
+# Installation
+### Add responsive_framework to pubspec.yaml
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  responsive_framework: ^0.0.1
+```
+# Usage
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+## Import the Package
 ```dart
-const like = 'sample';
+import 'package:responsive_framework/responsive_framework.dart';
+```
+## Wrap MaterialApp with ResponsiveUIWidget widget
+```dart
+ResponsiveUIWidget( 
+  builder: (context, orientation, screenType) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  },
+);
 ```
 
-## Additional information
+## Widget Size
+```dart
+Container(
+  width: LayoutSizeHelper.h(50), // This will take 50% of the screen's width
+  height: 30.h // This will take 30% of the screen's height
+)
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Font size
+```dart
+Text('Responsive Framework', style: TextStyle(fontSize: 16.px))
+```
+or
+```dart
+Text('Responsive Framework', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_MEDIUM))
+```
+### see FontSizeHelper for further detail
+
+## Responsive UI Helper Class provide custom Responsive Widget
+```dart
+ResponsiveUIHelper.buildTitleTextWidget(titleText);
+```
+```dart
+ResponsiveUIHelper.buildNormalTextWidget(text);
+```
+```dart
+ResponsiveUIHelper.buildPlatformWidget(
+    tabletWidget: YourTabletWidget(),
+    mobileWidget: YourMobileWidget(),
+);
+```
+```dart
+ResponsiveUIHelper.buildPlatformWidgetWithOrientation(
+    tabletPortraitWidget: YourTabletPortraitWidget(),
+    tabletLandScapetWidget: YourTabletLandScapeWidget(),
+    mobilPortraitWidget: YourMobilePortraitWidget(),
+    mobilLandScapeWidget: YourMobileLandScapeWidget(),
+);
+```
