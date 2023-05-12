@@ -25,8 +25,11 @@ class DeviceHelper {
 
   DeviceInfoModel get deviceInfoModel => _deviceInfoModel;
   String get platFormText => Platform.isIOS ? DeviceHelper.PLATFORM_IOS_TEXT : DeviceHelper.PLATFORM_ANDROID_TEXT;
-  bool get isLandscape => deviceInfoModel.isLandscape;
-  bool get isTablet => deviceInfoModel.isTablet;
+  bool get isLandscape => _deviceInfoModel.isLandscape;
+  bool get isTablet => _deviceInfoModel.isTablet;
+
+  EScreenType get screenType => _deviceInfoModel.screenType;
+  Orientation get orientation => _deviceInfoModel.orientation;
 
   /// This allows a value of type T or T?
   /// to be treated as a value of type T?.
@@ -43,6 +46,8 @@ class DeviceHelper {
     double maxMobileWidth, [
     double? maxTabletWidth,
   ]) {
+    
+    _deviceInfoModel = new DeviceInfoModel();
     // Set Orientation
     _deviceInfoModel.orientation = currentOrientation;
 

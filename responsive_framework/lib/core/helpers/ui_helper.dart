@@ -33,7 +33,7 @@ class UIHelper {
   static Widget buildNormalTextWidget({required String text, double? fontSize}) {
     return Text(
       text, 
-      style: TextStyle(fontSize: fontSize ?? FontSizeHelper.NORMAL_TEXT_MEDIUM, fontWeight: FontWeight.w600),
+      style: TextStyle(fontSize: fontSize ?? FontSizeHelper.NORMAL_TEXT_MEDIUM),
     );
   }
 

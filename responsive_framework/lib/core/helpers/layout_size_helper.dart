@@ -39,7 +39,7 @@ extension DeviceExtention on num {
   /// The respective value in pixels (default)
   // double get px => _deviceInfoModel.isTablet ? (this + 4) : this.toDouble();
   //? Need to refactor
-  double get px => this *  (_deviceInfoModel.isTablet ? (_deviceInfoModel.ASPECT_RATIO * .2) : (_deviceInfoModel.ASPECT_RATIO * .3));
+  double get px => this *  (_deviceInfoModel.isTablet ? (_deviceInfoModel.ASPECT_RATIO * 1.1) : (_deviceInfoModel.ASPECT_RATIO * 2));
 
   //* Relative length units
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
