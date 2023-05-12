@@ -10,7 +10,7 @@ typedef ResponsiveBuilder = Widget Function(BuildContext, Orientation, EScreenTy
 /// 
 /// [ResponsiveUIWidget] a widget for creating responsive user interfaces.
 /// 
-class ResponsiveUIWidget extends StatelessWidget {
+class ResponsiveUIWidget extends StatefulWidget {
 
   final ResponsiveBuilder builder;
   final double maxMobileWidth;
@@ -23,18 +23,25 @@ class ResponsiveUIWidget extends StatelessWidget {
   }) : super(key: key) ;
 
   @override
+  State<ResponsiveUIWidget> createState() => _ResponsiveUIWidgetState();
+}
+
+class _ResponsiveUIWidgetState extends State<ResponsiveUIWidget> {
+  @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return OrientationBuilder(builder: (context, orientation) {
-        
-        //* Set Device Info
-        DeviceHelper.getInstance().setDeivceInfo(context, constraints, orientation, maxMobileWidth, maxTabletWidth);
-        
-        if (constraints.maxWidth == 0 || constraints.maxHeight == 0) {
-          return const SizedBox.shrink();
-        }
-        return builder(context, orientation, DeviceHelper.getInstance().screenType);
-      });
-    });
+    return Center(
+      child: LayoutBuilder(builder: (context, constraints) {
+        return OrientationBuilder(builder: (context, orientation) {
+          
+          //* Set Device Info
+          DeviceHelper.getInstance().setDeivceInfo(context, constraints, orientation, widget.maxMobileWidth, widget.maxTabletWidth);
+          
+          if (constraints.maxWidth == 0 || constraints.maxHeight == 0) {
+            return const SizedBox.shrink();
+          }
+          return widget.builder(context, orientation, DeviceHelper.getInstance().screenType);
+        });
+      }),
+    );
   }
 }

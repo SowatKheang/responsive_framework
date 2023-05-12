@@ -14,4 +14,5 @@ export 'core/helpers/layout_size_helper.dart';
 export 'core/helpers/responsive_ui_helper.dart';
 
 /// [Widgets]
+export 'core/widgets/platform_screen_widget.dart';
 export 'core/widgets/responsive_ui_widget.dart';
