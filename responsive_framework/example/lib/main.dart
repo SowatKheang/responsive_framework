@@ -36,6 +36,7 @@ class _MyAppState extends State<MyApp> {
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   
                   // Default Title Text Widget provide by responsive framework package
@@ -54,6 +55,16 @@ class _MyAppState extends State<MyApp> {
                   ResponsiveUIHelper.buildPlatformWidget(
                     tabletWidget: Text('My Tablet Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
                     mobileWidget: Text('My Mobile Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                  ),
+                  
+                  SizedBox(height: LayoutSizeHelper.px(10)),
+
+                  // Platform Widget with Orientation provide by responsive framework package
+                  ResponsiveUIHelper.buildPlatformWidgetWithOrientation(
+                    tabletPortraitWidget: Text('My Tablet Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                    tabletLandScapetWidget: Text('My Tablet LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                    mobilPortraitWidget: Text('My Mobile Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                    mobilLandScapeWidget: Text('My Mobile LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
                   ),
 
                 ],
