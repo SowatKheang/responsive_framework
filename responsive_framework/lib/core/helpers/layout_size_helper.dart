@@ -66,7 +66,7 @@ extension DeviceExtention on num {
   /// Calculates the width depending on the device's screen size
   ///
   /// e.g.: 20.h -> will take 20% of the screen's width
-  double get w => this * _deviceInfoModel.HEIGHT / 100;
+  double get w => this * _deviceInfoModel.WIDTH / 100;
 
   /// Calculates the material dp (Pixel Density)
   /// (https://material.io/design/layout/pixel-density.html#pixel-density-on-android))
