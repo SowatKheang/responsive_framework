@@ -5,11 +5,7 @@ import '../../responsive_framework.dart';
 /// 
 /// Provides [BuildContext], [Orientation], and [EScreenType] parameters to the builder function
 /// 
-typedef ResponsiveBuilder = Widget Function(
-  BuildContext,
-  Orientation,
-  EScreenType,
-);
+typedef ResponsiveBuilder = Widget Function(BuildContext, Orientation, EScreenType);
 
 /// 
 /// [ResponsiveUIWidget] a widget for creating responsive user interfaces.
@@ -22,7 +18,7 @@ class ResponsiveUIWidget extends StatelessWidget {
 
   const ResponsiveUIWidget({Key? key,
     required this.builder,
-    this.maxMobileWidth = 599, //? Should Change?
+    this.maxMobileWidth = 599,
     this.maxTabletWidth,
   }) : super(key: key) ;
 
@@ -37,9 +33,7 @@ class ResponsiveUIWidget extends StatelessWidget {
         if (constraints.maxWidth == 0 || constraints.maxHeight == 0) {
           return const SizedBox.shrink();
         }
-
-        return builder(context, orientation,  DeviceHelper.getInstance().deviceInfoModel.screenType);
-      
+        return builder(context, orientation, DeviceHelper.getInstance().screenType);
       });
     });
   }

@@ -1,7 +1,5 @@
 
 import 'dart:math';
-import 'package:flutter/material.dart';
-
 import '../../responsive_framework.dart';
 
 ///
@@ -16,6 +14,8 @@ class LayoutSizeHelper {
   static double px(num pixel) => pixel.px;
 
   static double dp(num densityPixel) => densityPixel.dp;
+
+  //TODO: add more
 
 }
 

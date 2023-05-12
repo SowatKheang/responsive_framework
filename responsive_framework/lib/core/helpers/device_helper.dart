@@ -85,12 +85,9 @@ class DeviceHelper {
     }
 
     // Sets ScreenType
-    if ((_deviceInfoModel.orientation == Orientation.portrait && _deviceInfoModel.WIDTH <= maxMobileWidth) ||
-        (_deviceInfoModel.orientation == Orientation.landscape && _deviceInfoModel.HEIGHT <= maxMobileWidth)) {
+    if ((!isLandscape && _deviceInfoModel.WIDTH <= maxMobileWidth) || (isLandscape && _deviceInfoModel.HEIGHT <= maxMobileWidth)) {
       _deviceInfoModel.screenType = EScreenType.MOBILE;
-    } else if (maxTabletWidth == null ||
-        (_deviceInfoModel.orientation == Orientation.portrait && _deviceInfoModel.WIDTH <= maxTabletWidth) ||
-        (_deviceInfoModel.orientation == Orientation.landscape && _deviceInfoModel.HEIGHT <= maxTabletWidth)) {
+    } else if (maxTabletWidth == null || (!isLandscape && _deviceInfoModel.WIDTH <= maxTabletWidth) || (isLandscape && _deviceInfoModel.HEIGHT <= maxTabletWidth)) {
       _deviceInfoModel.screenType = EScreenType.TABLET;
     } else {
       _deviceInfoModel.screenType = EScreenType.DESKTOP;

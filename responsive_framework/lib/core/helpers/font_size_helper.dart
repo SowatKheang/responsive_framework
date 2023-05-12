@@ -6,17 +6,17 @@ import '../../responsive_framework.dart';
 ///
 class FontSizeHelper {
   
-  /// HEADER TEXT 1
+  /// HEADER 1
   static double get H1 => 24.px;
-  /// HEADER TEXT 2
+  /// HEADER 2
   static double get H2 => 22.px;
-  /// HEADER TEXT 3
+  /// HEADER 3
   static double get H3 => 20.px;
-  /// HEADER TEXT 4
+  /// HEADER 4
   static double get H4 => 18.px;
-  /// HEADER TEXT 5
+  /// HEADER 5
   static double get H5 => 16.px;
-  /// HEADER TEXT 6
+  /// HEADER 6
   static double get H6 => 14.px;
 
   /// NORMAL TEXT LARGE
@@ -32,5 +32,7 @@ class FontSizeHelper {
   static double customFontSize(double fontSize) {
     return fontSize;
   }
+
+  //TODO: add more
 
 }
