@@ -4,17 +4,32 @@
 <!-- ![Tablet Landscape Mode](/flutter_responsive_framework/screenshots/tablet_landscape.png "Tablet Landscape Mode")
 ![Tablet Portrait Mode](/flutter_responsive_framework/screenshots/tablet_portrait.png "Tablet Portrait Mode"). -->
 
-## Tablet
-<img src="screenshots/tablet_portrait.png" height="500"> 
-<img src="screenshots/tablet_landscape.png" height="500"> 
+## Large Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.20.37%20PM.png" height="400"> 
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.20.21%20PM.png" height="400"> 
 
 <br>
 
-## Mobile
-<img src="screenshots/mobile_portrait.png" height="400"> 
-<img src="screenshots/mobile_landscape.png" height="250"> 
+## Medium Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.21.32%20PM.png" height="400"> 
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.21.37%20PM.png" height="400"> 
 
 <br>
+
+## Small Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.22.12%20PM.png" height="400"> 
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.22.17%20PM.png" height="400"> 
+
+<br>
+
+## Web Small Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.23.09%20PM.png" height="400">
+
+## Web Medium Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.23.31%20PM.png" height="400">
+
+## Web Large Screen
+<img src="https://github.com/SowatKheang/responsive_framework/blob/master/screenshots/Screenshot%202023-05-15%20at%204.23.49%20PM.png" height="400">
 
 # Installation
 ### Add flutter_responsive_framework to pubspec.yaml
