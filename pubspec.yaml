@@ -1,6 +1,6 @@
 name: flutter_responsive_framework
 description: A Flutter package project for both Android and iOS which provides responsive Layout, Widget, and Text.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/SowatKheang/responsive_framework
 
 ## Reference: https://pub.dev/packages/responsive_sizer
