@@ -36,7 +36,7 @@ class _MyPlatformWidgetState extends PlatformScreenWidgetState<MyPlatformWidget>
     return Center(
       child: Container(
         color: Colors.green,
-        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Mobile Landscape Content')
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Small Landscape Content')
       ),
     );
   }
@@ -46,7 +46,7 @@ class _MyPlatformWidgetState extends PlatformScreenWidgetState<MyPlatformWidget>
     return Center(
       child: Container(
         color: Colors.green,
-        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Mobile Portrait Content')
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Small Portrait Content')
       ),
     );
   }
@@ -56,7 +56,7 @@ class _MyPlatformWidgetState extends PlatformScreenWidgetState<MyPlatformWidget>
     return Center(
       child: Container(
         color: Colors.green,
-        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Tablet Landscape Content')
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Medium Landscape Content')
       ),
     );
   }
@@ -66,7 +66,27 @@ class _MyPlatformWidgetState extends PlatformScreenWidgetState<MyPlatformWidget>
     return Center(
       child: Container(
         color: Colors.green,
-        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Tablet Portrait Content')
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Medium Portrait Content')
+      ),
+    );
+  }
+  
+  @override
+  Widget largeScreenLandscapeBody(BuildContext context) {
+    return Center(
+      child: Container(
+        color: Colors.green,
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Large Portrait Content')
+      ),
+    );
+  }
+  
+  @override
+  Widget largeScreenPortraitBody(BuildContext context) {
+    return Center(
+      child: Container(
+        color: Colors.green,
+        child: ResponsiveUIHelper.buildNormalTextWidget(text: 'Large Portrait Content')
       ),
     );
   }

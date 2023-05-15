@@ -45,6 +45,15 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+
+                      Container(
+                        height: 10.h, // It will take 10% of the screen's height
+                        width: 20.h, // It will take 20% of the screen's width
+                        color: Colors.blue,
+                      ), 
+
+                      // Call px by num.px
+                      SizedBox(height: 10.px),
                       
                       // Default Title Text Widget provide by responsive framework package
                       ResponsiveUIHelper.buildTitleTextWidget(title: DeviceHelper.getInstance().screenOrientationString),
@@ -60,18 +69,21 @@ class _MyAppState extends State<MyApp> {
                 
                       // Platform Widget provide by responsive framework package
                       ResponsiveUIHelper.buildPlatformWidget(
-                        tabletWidget: Text('My Tablet Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
-                        mobileWidget: Text('My Mobile Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        largeScreenWidget: Text('My Large Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        tabletWidget: Text('My Medium Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        mobileWidget: Text('My Small Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
                       ),
                       
                       SizedBox(height: LayoutSizeHelper.px(10)),
                 
                       // Platform Widget with Orientation provide by responsive framework package
                       ResponsiveUIHelper.buildPlatformWidgetWithOrientation(
-                        tabletPortraitWidget: Text('My Tablet Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
-                        tabletLandScapetWidget: Text('My Tablet LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
-                        mobilPortraitWidget: Text('My Mobile Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
-                        mobilLandScapeWidget: Text('My Mobile LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        larageScreenPortraitWidget: Text('My Large Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        larageScreenLandScapetWidget: Text('My Large LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        tabletPortraitWidget: Text('My Medium Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        tabletLandScapetWidget: Text('My Medium LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        mobilPortraitWidget: Text('My Small Portrait Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
+                        mobilLandScapeWidget: Text('My Small LandScape Widget', style: TextStyle(fontSize: FontSizeHelper.NORMAL_TEXT_SMALL)), 
                       ),
 
                       SizedBox(height: LayoutSizeHelper.px(10)),

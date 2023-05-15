@@ -37,24 +37,34 @@ class ResponsiveUIHelper {
     );
   }
 
-  /// This function builds a platform-specific widget based on whether the device is a tablet or a
+  /// This function builds a platform-specific widget based on whether the device is a desktop/web, a tablet, or a
   /// mobile device.
   /// 
   /// Args:
+  ///   [largeScreenWidget] (Widget): A required parameter of type Widget that represents the widget to be
+  /// displayed on a desktop or web.
   ///   [tabletWidget] (Widget): A required parameter of type Widget that represents the widget to be
   /// displayed on a tablet device.
   ///   [mobileWidget] (Widget): A required parameter of type Widget that represents the widget to be
   /// displayed on mobile devices.
-  static Widget buildPlatformWidget({ required Widget tabletWidget, required Widget mobileWidget }) {
-    if (DeviceHelper.getInstance().isTablet) {
-      return tabletWidget;
+  static Widget buildPlatformWidget({ required Widget largeScreenWidget, required Widget tabletWidget, required Widget mobileWidget }) {
+    switch (DeviceHelper.getInstance().deviceInfoModel.screenType) {
+      case EScreenType.MOBILE:
+        return mobileWidget;
+      case EScreenType.TABLET:
+        return tabletWidget;
+      case EScreenType.LARGE_SCREEN:
+        return largeScreenWidget;
     }
-    return mobileWidget;
   }
 
   /// This function builds a platform-specific widget based on the device's orientation and type.
   /// 
   /// Args:
+  ///   [larageScreenPortraitWidget] (Widget): A widget that will be displayed when the app is running on a
+  /// desktop/web in portrait orientation.
+  ///   [larageScreenLandScapetWidget] (Widget): This parameter is a required Widget that represents the UI
+  /// component to be displayed when the device is a esktop/web and in landscape orientation.
   ///   [tabletPortraitWidget] (Widget): A widget that will be displayed when the app is running on a
   /// tablet in portrait orientation.
   ///   [tabletLandScapetWidget] (Widget): This parameter is a required Widget that represents the UI
@@ -64,14 +74,21 @@ class ResponsiveUIHelper {
   ///   [mobilLandScapeWidget] (Widget): A widget that will be displayed when the device is a mobile phone
   /// and in landscape orientation.
   static Widget buildPlatformWidgetWithOrientation({ 
+    required Widget larageScreenPortraitWidget, 
+    required Widget larageScreenLandScapetWidget,  
     required Widget tabletPortraitWidget, 
     required Widget tabletLandScapetWidget,  
     required Widget mobilPortraitWidget,
     required Widget mobilLandScapeWidget 
   }) {
 
-    //* Tablet
-    if (DeviceHelper.getInstance().isTablet) {
+    //* Desktop/Web
+    if (DeviceHelper.getInstance().isLargeScreen) {
+      if (DeviceHelper.getInstance().isLandscape) {
+        return larageScreenLandScapetWidget;
+      }
+      return larageScreenPortraitWidget;
+    } else if (DeviceHelper.getInstance().isTablet) {  //* Tablet
       if (DeviceHelper.getInstance().isLandscape) {
         return tabletLandScapetWidget;
       }

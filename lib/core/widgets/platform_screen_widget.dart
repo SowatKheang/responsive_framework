@@ -151,6 +151,8 @@ mixin PlatformScreenWidgetMixin<E extends PlatformScreenWidget> on PlatformScree
   Widget _buildBody(BuildContext context) {
     return ResponsiveUIWidget(builder: (context, orientation, screenType) {
       return ResponsiveUIHelper.buildPlatformWidgetWithOrientation(
+        larageScreenPortraitWidget: largeScreenPortraitBody(context),
+        larageScreenLandScapetWidget: largeScreenLandscapeBody(context),
         tabletPortraitWidget: tabletPortraitBody(context), 
         tabletLandScapetWidget: tabletLandscapeBody(context), 
         mobilPortraitWidget: mobilePortraitBody(context), 
@@ -158,6 +160,10 @@ mixin PlatformScreenWidgetMixin<E extends PlatformScreenWidget> on PlatformScree
       );
     });
   }
+
+  /// Desktop/Web
+  Widget largeScreenLandscapeBody(BuildContext context);
+  Widget largeScreenPortraitBody(BuildContext context);
 
   Widget tabletLandscapeBody(BuildContext context);
   Widget tabletPortraitBody(BuildContext context);

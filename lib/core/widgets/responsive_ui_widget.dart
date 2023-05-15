@@ -13,13 +13,9 @@ typedef ResponsiveBuilder = Widget Function(BuildContext, Orientation, EScreenTy
 class ResponsiveUIWidget extends StatefulWidget {
 
   final ResponsiveBuilder builder;
-  final double maxMobileWidth;
-  final double? maxTabletWidth;
 
   const ResponsiveUIWidget({Key? key,
     required this.builder,
-    this.maxMobileWidth = 599,
-    this.maxTabletWidth,
   }) : super(key: key) ;
 
   @override
@@ -34,7 +30,7 @@ class _ResponsiveUIWidgetState extends State<ResponsiveUIWidget> {
         return OrientationBuilder(builder: (context, orientation) {
           
           //* Set Device Info
-          DeviceHelper.getInstance().setDeivceInfo(context, constraints, orientation, widget.maxMobileWidth, widget.maxTabletWidth);
+          DeviceHelper.getInstance().setDeivceInfo(context, constraints, orientation);
           
           if (constraints.maxWidth == 0 || constraints.maxHeight == 0) {
             return const SizedBox.shrink();

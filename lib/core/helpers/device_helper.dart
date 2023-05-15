@@ -12,6 +12,9 @@ class DeviceHelper {
   static const String PLATFORM_IOS_TEXT = 'iOS';
   static const String PLATFORM_ANDROID_TEXT = 'Android';
 
+  static const double MAX_MOBILE_WIDTH = 600;
+  static const double MAX_TABELT_WIDTH = 950;
+
   DeviceInfoModel _deviceInfoModel = new DeviceInfoModel();
 
   static DeviceHelper? _instance;
@@ -25,6 +28,7 @@ class DeviceHelper {
 
   DeviceInfoModel get deviceInfoModel => _deviceInfoModel;
   String get platFormText => Platform.isIOS ? DeviceHelper.PLATFORM_IOS_TEXT : DeviceHelper.PLATFORM_ANDROID_TEXT;
+  bool get isLargeScreen => _deviceInfoModel.isLargeScreen;
   bool get isLandscape => _deviceInfoModel.isLandscape;
   bool get isTablet => _deviceInfoModel.isTablet;
 
@@ -34,13 +38,15 @@ class DeviceHelper {
   String get screenTypeString {
     String type = '';
     switch (screenType) {
+      case EScreenType.LARGE_SCREEN:
+        type = 'This is Large Screen';
+        break;
       case EScreenType.MOBILE:
-        type = 'This is Mobile Screen';
+        type = 'This is Small Screen';
         break;
       case EScreenType.TABLET:
-        type = 'This is Tablet Screen';
+        type = 'This is Medium Screen';
         break;
-      default: type = 'This is Other Screen'; break;
     }
     return type;
   }
@@ -63,10 +69,8 @@ class DeviceHelper {
   void setDeivceInfo(
     BuildContext context,
     BoxConstraints constraints,
-    Orientation currentOrientation,
-    double maxMobileWidth, [
-    double? maxTabletWidth,
-  ]) {
+    Orientation currentOrientation
+  ) {
     
     // Set Orientation
     _deviceInfoModel.orientation = currentOrientation;
@@ -105,13 +109,13 @@ class DeviceHelper {
       }
     }
 
-    // Sets ScreenType
-    if ((!isLandscape && _deviceInfoModel.WIDTH <= maxMobileWidth) || (isLandscape && _deviceInfoModel.HEIGHT <= maxMobileWidth)) {
+    //* Sets ScreenType
+    if ((!isLandscape && _deviceInfoModel.WIDTH <= MAX_MOBILE_WIDTH) || (isLandscape && _deviceInfoModel.HEIGHT <= MAX_MOBILE_WIDTH)) {
       _deviceInfoModel.screenType = EScreenType.MOBILE;
-    } else if (maxTabletWidth == null || (!isLandscape && _deviceInfoModel.WIDTH <= maxTabletWidth) || (isLandscape && _deviceInfoModel.HEIGHT <= maxTabletWidth)) {
+    } else if ((!isLandscape && _deviceInfoModel.WIDTH <= MAX_TABELT_WIDTH) || (isLandscape && _deviceInfoModel.HEIGHT <= MAX_TABELT_WIDTH)) {
       _deviceInfoModel.screenType = EScreenType.TABLET;
     } else {
-      _deviceInfoModel.screenType = EScreenType.DESKTOP;
+      _deviceInfoModel.screenType = EScreenType.LARGE_SCREEN;
     }
   }
 

@@ -42,11 +42,13 @@ extension DeviceExtention on num {
   //? Need to refactor
   // double get px => this * (_deviceInfoModel.isTablet ? (_deviceInfoModel.ASPECT_RATIO * 1.1) : (_deviceInfoModel.ASPECT_RATIO * 2));
   double get px  {
-    // debugPrint('ASPECT_RATIO: ${_deviceInfoModel.ASPECT_RATIO}');
-    if (_deviceInfoModel.isTablet) {
-      return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * 1.2) : (_deviceInfoModel.ASPECT_RATIO * 2.2));
+    if (_deviceInfoModel.isLargeScreen) {
+      return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * 1.1) : (_deviceInfoModel.ASPECT_RATIO * 2.4));
+    } else if (_deviceInfoModel.isTablet) {
+      return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * .8) : (_deviceInfoModel.ASPECT_RATIO * 2.1));
+    } else {
+      return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * .5) : (_deviceInfoModel.ASPECT_RATIO * 2));
     }
-    return this * (_deviceInfoModel.isLandscape ? (_deviceInfoModel.ASPECT_RATIO * .5) : (_deviceInfoModel.ASPECT_RATIO * 2));
   }
 
   //* Relative length units

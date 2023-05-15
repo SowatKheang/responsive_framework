@@ -17,6 +17,7 @@ class DeviceInfoModel {
   late EScreenType _screenType;
   late Orientation _orientation;
 
+  bool get isLargeScreen => this.screenType == EScreenType.LARGE_SCREEN;
   bool get isTablet => this.screenType == EScreenType.TABLET;
   bool get isLandscape => this._orientation == Orientation.landscape;
 
